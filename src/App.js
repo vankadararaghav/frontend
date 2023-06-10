@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+
 import Task from "./components/Task";
 
 function App() {
@@ -103,14 +103,14 @@ function App() {
   }
   function prePage(){
    
-    if (currentPage != 1) {
+    if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
       console.log("currentPage",currentPage);
     }
 
   }
   function nextPage() {
-    if (currentPage != numbers.length) {
+    if (currentPage !== numbers.length) {
       setCurrentPage(currentPage + 1);
       console.log("currentPage",currentPage);
     }
