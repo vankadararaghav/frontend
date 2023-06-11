@@ -5,6 +5,7 @@ import shoppingImg from "../images/shopping.png"
 import {Link}  from "react-router-dom";
 import axios from "axios";
 import {useNavigate} from 'react-router-dom';
+import {setHeaders} from "../config/axiosBaseUrl.js";
 
 function Login(){
 
@@ -31,6 +32,7 @@ async function sendLoginRequest(){
               console.log(response.data);
               if(response.data.status)
               {
+                  setHeaders(response.data.id);
                   Navigate("/App");
               }
               else{ 

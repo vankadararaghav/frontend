@@ -4,9 +4,10 @@ import {BrowserRouter as Router, Routes,Route} from "react-router-dom";
 import Signup from "./screens/Signup"
 import Login  from "./screens/Login"
 import App  from "./App";
+import {baseURL} from "./config/axiosBaseUrl";
 
 const element = document.getElementById("root");
-
+baseURL();
 const root  = ReactDOM.createRoot(element);
 
 root.render(

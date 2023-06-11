@@ -4,9 +4,10 @@ import "./App.css";
 import axios from "axios";
 
 import Task from "./components/Task";
+import {useNavigate} from "react-router-dom";
 
 function App() {
-  // const location = useLocation();
+  const Navigate = useNavigate();
   const [tasks, setTasks] = useState([]);
   const [taskName, setTaskName] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -34,6 +35,7 @@ function App() {
         setTasks(response.data.data);
       } else {
         alert(response.data.message);
+        Navigate("/login");
       }
     }
     getAllData();
